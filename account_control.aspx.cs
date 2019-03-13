@@ -164,7 +164,7 @@ namespace webservice
                     }
 
                     //判斷重複帳號
-                    if (CheckCanCreate(aData.account, out byte ioutkind) != 0)
+                    if (CheckCanCreate(aData.account, out byte ioutkind, aData.ID) != 0)
                     {
                         Response.Write(ioutkind.ToString());
                         return;
@@ -219,7 +219,7 @@ namespace webservice
         }
 
         //判斷是否有重複帳號的問題
-        private byte CheckCanCreate(string iaccount, out byte ioutkind)
+        private byte CheckCanCreate(string iaccount, out byte ioutkind, int iID = 0)
         {
             string aSqlStr = "select account from dokkansuper.accountdata where account = '{0}'";
 
