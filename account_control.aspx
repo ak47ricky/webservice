@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="account_control.aspx.cs" Inherits="webservice.account_control" %>
