@@ -223,6 +223,9 @@ namespace webservice
         {
             string aSqlStr = "select account from dokkansuper.accountdata where account = '{0}'";
 
+            if (iID != 0)
+                aSqlStr += "And ID != " + iID;
+
             aSqlStr = string.Format(aSqlStr, iaccount);
             try
             {
